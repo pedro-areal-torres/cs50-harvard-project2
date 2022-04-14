@@ -1,0 +1,37 @@
+{% extends "/layout.html" %}
+
+{% block script %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+{% endblock %}
+
+
+{% block body %}
+
+<body>
+  <header class='text-center' style="background-color: #357180;" style="width: 100%">
+    <h1 class="display-2 py-4">Flack Chat</h1>
+  </header>
+
+  <main>
+    <div class="centered margin-t">
+      <img src="{{ url_for('static', filename='img/ChatIcon.png') }}" alt="ChatIcon" width="300px"
+        style="margin-left: 34%; margin-top: 3%;">
+    </div>
+    <div class='row no-gutters container' style="width: 35%; margin-left: 32%;">
+      <div class='col p-2'>
+        <h1 class='text-center'>Sign in into our chat</h1>
+        <form id="display-form" action="{{ url_for('login') }}" method="POST">
+          <div class="form-group">
+            <input id="login-name" type="text" class="form-control" name="display-name" required />
+          </div>
+          <button type="submit" class="btn m-1 w-100" id="signin-button"
+            style="background-color: #67B8CB;">Join!</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+{% endblock %}
